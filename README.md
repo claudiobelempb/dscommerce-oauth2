@@ -11,12 +11,11 @@ classDiagram
         -String password
     }
      class Role {
-        -Long roleId
+        -Long id
         -String authority
     }
 
-    User "*" --> "*..*" Role
-
+    User "0..*" -- "1..*" Role
 ```
 
 ## 2. Dependências
