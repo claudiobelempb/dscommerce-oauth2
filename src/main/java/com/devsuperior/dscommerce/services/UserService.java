@@ -29,7 +29,7 @@ public class UserService implements UserDetailsService {
         }
 
         User user = new User();
-        user.setEmail(username);
+        user.setEmail(list.get(0).getUsername());
         user.setPassword(list.get(0).getPassword());
 
         for(UserDetailsProjection projection: list){
