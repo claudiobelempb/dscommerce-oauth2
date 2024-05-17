@@ -76,3 +76,11 @@ cors.origins=${CORS_ORIGINS:http://localhost:3000,http://localhost:5173}
 @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_OPERATOR')")
 ```
 
+## 7. Obtendo o usuário logado
+
+```
+Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+Jwt jwtPrincipal = (Jwt) authentication.getPrincipal();
+String username = jwtPrincipal.getClaim("username");
+```
+
